@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pink-soft': '#FADADD',
+                        'pink-dusty': '#DCAE96',
+                        'pink-deep': '#B56576',
+                        'pink-bg': '#FFF0F5',
+                        'ribbon': '#FFB6C1'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FFF0F5; }
+
+        .ribbon-title {
+            position: relative;
+            display: inline-block;
+            padding: 10px 40px;
+            background: #FFB6C1;
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .ribbon-title::before, .ribbon-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            border: 15px solid #E598A6;
+            z-index: -1;
+        }
+        .ribbon-title::before {
+            left: -20px;
+            border-right-color: transparent;
+            border-top-color: transparent;
+        }
+        .ribbon-title::after {
+            right: -20px;
+            border-left-color: transparent;
+            border-top-color: transparent;
+        }
+
+        /* Arch Image Frame */
+        .arch-frame {
+            border-radius: 100px 100px 0 0;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 10px 15px -3px rgba(255, 182, 193, 0.5);
+        }
+
+        /* Hover Animations */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(255, 182, 193, 0.6);
+        }
+        
+        /* Sparkle Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating { animation: float 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="text-gray-800 antialiased selection:bg-pink-300 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-pink-200">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-serif font-bold text-pink-deep">Annastasya.</a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium text-pink-deep">
+                <a href="#about" class="hover:text-pink-400 transition">About Me</a>
+                <a href="#skills" class="hover:text-pink-400 transition">Skills</a>
+                <a href="#experience" class="hover:text-pink-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-pink-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-4 min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+        <div class="absolute top-20 left-10 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 floating"></div>
+        <div class="absolute bottom-10 right-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 floating" style="animation-delay: 1.5s;"></div>
+
+        <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 relative z-10">
+            <div class="flex-1 text-center md:text-left">
+                <span class="inline-block py-1 px-3 rounded-full bg-pink-100 text-pink-deep text-sm font-semibold mb-4 border border-pink-200">✨ Hello, welcome!</span>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-gray-800 mb-4 leading-tight">
+                    I am <span class="text-pink-deep">Annastasya</span><br>Putri Siwi Mentari
+                </h1>
+                <h2 class="text-xl md:text-2xl text-pink-dusty font-medium mb-6 flex items-center justify-center md:justify-start gap-2">
+                    <i class="fa-solid fa-ribbon text-pink-400"></i> Technical & Digital Business Enthusiast
+                </h2>
+                <p class="text-gray-600 mb-8 max-w-lg leading-relaxed">
+                    Digital Business student with a technical background in Airframe and Powerplant. This combination shapes me into a meticulous, analytical, and adaptive individual towards digital innovation.
+                </p>
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="bg-pink-deep text-white px-6 py-3 rounded-full hover:bg-pink-400 transition shadow-lg shadow-pink-300/50 font-medium">Let's Collaborate</a>
+                    <a href="#projects" class="bg-white text-pink-deep border border-pink-200 px-6 py-3 rounded-full hover:bg-pink-50 transition shadow-sm font-medium">View Projects</a>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <div class="relative">
+                    <img src="c:\Users\Asus\OneDrive\Dokumen\tasya\fotoprofil.jpg.jpeg" alt="Annastasya" class="w-64 h-[22rem] md:w-80 md:h-[28rem] arch-frame relative z-10">
+                    <div class="absolute -bottom-6 -right-6 text-5xl floating">🎀</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="mb-12">
+                <h2 class="ribbon-title text-2xl">Get to Know Me</h2>
+            </div>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+                I am used to appearing confidently in public, collaborating in teams, and proactively finding effective solutions in every project and organization.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-pink-50 border border-pink-100 card-hover">
+                    <div class="w-14 h-14 bg-pink-200 rounded-full flex items-center justify-center mx-auto mb-4 text-pink-deep text-2xl">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl mb-2">Meticulous</h3>
+                    <p class="text-gray-600 text-sm">Bringing high precision from experience in the technical aviation world.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-pink-50 border border-pink-100 card-hover">
+                    <div class="w-14 h-14 bg-pink-200 rounded-full flex items-center justify-center mx-auto mb-4 text-pink-deep text-2xl">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl mb-2">Analytical</h3>
+                    <p class="text-gray-600 text-sm">Processing and transforming data into strategic business decisions.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-pink-50 border border-pink-100 card-hover">
+                    <div class="w-14 h-14 bg-pink-200 rounded-full flex items-center justify-center mx-auto mb-4 text-pink-deep text-2xl">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl mb-2">Adaptive</h3>
+                    <p class="text-gray-600 text-sm">Fast learner and easily adaptable to various digital innovations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 relative overflow-hidden">
+        <i class="fa-solid fa-ribbon absolute top-10 right-10 text-4xl text-pink-200/50 floating"></i>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="ribbon-title text-2xl mb-12">Skills & Fun Facts</h2>
+            
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 bg-white text-pink-deep rounded-full border border-pink-200 shadow-sm text-sm font-medium"><i class="fa-brands fa-microsoft mr-1"></i> Microsoft Word & PPT</span>
+                <span class="px-4 py-2 bg-white text-pink-deep rounded-full border border-pink-200 shadow-sm text-sm font-medium"><i class="fa-solid fa-microphone mr-1"></i> Public Speaking</span>
+                <span class="px-4 py-2 bg-white text-pink-deep rounded-full border border-pink-200 shadow-sm text-sm font-medium"><i class="fa-regular fa-clock mr-1"></i> Time Management</span>
+                <span class="px-4 py-2 bg-white text-pink-deep rounded-full border border-pink-200 shadow-sm text-sm font-medium"><i class="fa-solid fa-users mr-1"></i> Teamwork & Good Attitude</span>
+                <span class="px-4 py-2 bg-white text-pink-deep rounded-full border border-pink-200 shadow-sm text-sm font-medium"><i class="fa-solid fa-language mr-1"></i> Indonesian & English</span>
+                <span class="px-4 py-2 bg-pink-400 text-white rounded-full shadow-md text-sm font-medium tooltip" title="Unique bond with animals"><i class="fa-solid fa-paw mr-1"></i> "Animal Language" 🎀</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="ribbon-title text-2xl">Education & Journey</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-pink-deep mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap"></i> Education & Leadership
+                    </h3>
+                    <div class="space-y-6 border-l-2 border-pink-300 ml-3 pl-6 relative">
+                        <div class="relative">
+                            <span class="absolute -left-[33px] top-1 w-4 h-4 bg-white border-4 border-pink-400 rounded-full"></span>
+                            <span class="text-xs font-bold text-pink-400">2025 – Present</span>
+                            <h4 class="font-bold text-lg">Universitas Cakrawala</h4>
+                            <p class="text-sm text-gray-600">Bachelor of Digital Business: technological innovation, digital strategy, and data visualization for business decisions.</p>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-[33px] top-1 w-4 h-4 bg-white border-4 border-pink-400 rounded-full"></span>
+                            <span class="text-xs font-bold text-pink-400">Dec 2023</span>
+                            <h4 class="font-bold text-lg">Liaison Officer - LKBB SESAJI</h4>
+                            <p class="text-sm text-gray-600">Managed schedules and assertive coordination among participating teams to ensure events ran on time.</p>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-[33px] top-1 w-4 h-4 bg-white border-4 border-pink-400 rounded-full"></span>
+                            <span class="text-xs font-bold text-pink-400">Oct 2022 – Aug 2023</span>
+                            <h4 class="font-bold text-lg">1st Treasurer - Student Council (OSIS)</h4>
+                            <p class="text-sm text-gray-600">Meticulously managed funds, minimized daily reconciliation errors, and organized accountability reports for various events.</p>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-[33px] top-1 w-4 h-4 bg-white border-4 border-pink-400 rounded-full"></span>
+                            <span class="text-xs font-bold text-pink-400">2021 – 2024</span>
+                            <h4 class="font-bold text-lg">SMK Bina Dhirgantara[</h4>
+                            <p class="text-sm text-gray-600">Outstanding graduate majoring in Airframe and Powerplant.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-pink-deep mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-wrench"></i> Technical Experience
+                    </h3>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-pink-100 card-hover mb-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-lg">Mechanic Helper</h4>
+                            <span class="text-xs font-bold bg-pink-100 text-pink-600 px-2 py-1 rounded">Jun – Jul 2023</span>
+                        </div>
+                        <p class="text-sm font-medium text-pink-dusty mb-4">Poltekbang Surabaya</p>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-pink-400 mt-1"><i class="fa-solid fa-check-circle"></i></span>
+                                <div><strong>Tools Keeper:</strong> Fully responsible for maintaining the quality of inspection tools for aviation cadets.</div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-pink-400 mt-1"><i class="fa-solid fa-check-circle"></i></span>
+                                <div><strong>Inspection & Maintenance:</strong> Detailed structural inspection on LearJet aircraft to minimize damage risks.</div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-pink-400 mt-1"><i class="fa-solid fa-check-circle"></i></span>
+                                <div><strong>Troubleshooting:</strong> Analyzed and repaired wiring systems and Cessna 150 engines to operate optimally.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="ribbon-title text-2xl">Project Highlights</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="rounded-2xl overflow-hidden border border-pink-100 bg-white card-hover group shadow-sm">
+                    <div class="h-48 bg-pink-200 flex items-center justify-center p-6 text-center">
+                        <div class="flex gap-4">
+                            <div class="bg-red-200 text-red-700 px-3 py-2 rounded-lg text-xs font-bold shadow-sm">Poor</div>
+                            <div class="bg-yellow-200 text-yellow-700 px-3 py-2 rounded-lg text-xs font-bold shadow-sm">Good</div>
+                            <div class="bg-green-200 text-green-700 px-3 py-2 rounded-lg text-xs font-bold shadow-sm">Excellent</div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-left">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-serif font-bold text-xl">Kepul Pinta</h3>
+                            <i class="fa-solid fa-recycle text-pink-400 text-xl"></i>
+                        </div>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p><strong>Background:</strong> Collaborative midterm project for Digital Visual Communication course.</p>
+                            <p><strong>Solution:</strong> App prototype that helps users identify waste types and preparation before selling via digital services.</p>
+                            <p><strong>Contribution:</strong> Persuasive copywriting and interactive visual elements for waste readiness indicators.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden border border-pink-100 bg-white card-hover group shadow-sm">
+                    <div class="h-48 bg-pink-100 relative overflow-hidden flex items-center justify-center">
+                         <i class="fa-solid fa-chart-line text-6xl text-pink-300 opacity-50 absolute"></i>
+                         <p class="z-10 font-bold text-pink-600 bg-white/70 px-4 py-2 rounded-full shadow-sm backdrop-blur-sm">Power BI Dashboard</p>
+                    </div>
+                    <div class="p-6 text-left">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-serif font-bold text-xl">Data Visualization</h3>
+                            <i class="fa-solid fa-chart-column text-pink-400 text-xl"></i>
+                        </div>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p><strong>Analytics Dashboard:</strong> Interactive data visualization to support performance analysis.</p>
+                            <p><strong>Output:</strong> Power BI file <i>(ANNASTASYA PUTRI SIWI MENTARI_25120100019.pbix)</i> that transforms raw data into a comprehensive and easily understandable report.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+        <i class="fa-solid fa-ribbon absolute bottom-20 left-20 text-5xl text-pink-200/50 floating" style="animation-delay: 1s;"></i>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <div class="bg-pink-50 p-10 rounded-3xl shadow-lg border border-pink-100 max-w-2xl mx-auto">
+                <h3 class="font-serif text-3xl font-bold text-gray-800 mb-2">Let's Collaborate!</h3>
+                <p class="text-gray-500 mb-8 text-sm">Feel free to reach out, I am open to new opportunities.</p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="mailto:annastasyaputri20@gmail.com" class="flex items-center gap-3 text-gray-700 hover:text-pink-500 transition card-hover bg-white px-5 py-3 rounded-xl shadow-sm border border-pink-100 w-full md:w-auto">
+                        <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center text-pink-deep">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <span class="font-medium text-sm">annastasyaputri20@gmail.com</span>
+                    </a>
+                    <a href="https://wa.me/6288902969414" target="_blank" class="flex items-center gap-3 text-gray-700 hover:text-pink-500 transition card-hover bg-white px-5 py-3 rounded-xl shadow-sm border border-pink-100 w-full md:w-auto">
+                        <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center text-pink-deep">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </div>
+                        <span class="font-medium text-sm">0889 0296 9414</span>
+                    </a>
+                </div>
+                <div class="mt-8 pt-6 border-t border-pink-200 text-gray-500 text-sm flex items-center justify-center gap-2 font-medium">
+                    <i class="fa-solid fa-location-dot text-pink-400"></i> Sragen, Central Java
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-pink-100 py-6 text-center">
+        <p class="text-sm text-pink-800 font-medium">
+            &copy; 2026 Annastasya Putri Siwi Mentari. Made with <i class="fa-solid fa-heart text-pink-500"></i> and 🎀.
+        </p>
+    </footer>
+
+</body>
+</html>
